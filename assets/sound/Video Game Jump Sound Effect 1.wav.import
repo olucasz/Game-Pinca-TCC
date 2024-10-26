@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bjdcg4jn3isxb"
+path="res://.godot/imported/Video Game Jump Sound Effect 1.wav-875519ee854a17d269bac240a535e2b8.sample"
+
+[deps]
+
+source_file="res://assets/sound/Video Game Jump Sound Effect 1.wav"
+dest_files=["res://.godot/imported/Video Game Jump Sound Effect 1.wav-875519ee854a17d269bac240a535e2b8.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

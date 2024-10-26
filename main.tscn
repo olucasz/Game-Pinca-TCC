@@ -1,0 +1,159 @@
+[gd_scene load_steps=23 format=3 uid="uid://c3uwsd67atu6c"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_ictfu"]
+[ext_resource type="Texture2D" uid="uid://ciqtrti4tsntq" path="res://assets/main/background.png" id="2_y81xh"]
+[ext_resource type="Texture2D" uid="uid://d10e715osqp2" path="res://assets/main/bola.png" id="3_6ivl0"]
+[ext_resource type="Texture2D" uid="uid://dqk72bndv7tx3" path="res://assets/main/estrela.png" id="3_bdlwe"]
+[ext_resource type="Texture2D" uid="uid://bxvu7ti2ujsjg" path="res://assets/main/bola_tracado.png" id="4_agvtg"]
+[ext_resource type="Texture2D" uid="uid://bx3mbxaoyrcvi" path="res://assets/main/bola_teste.png" id="4_vmw27"]
+[ext_resource type="Texture2D" uid="uid://du1sis55g30y1" path="res://assets/main/traçado.png" id="4_x0wqe"]
+[ext_resource type="Texture2D" uid="uid://dqrrpaiqlqr1m" path="res://assets/main/diminuir.png" id="5_e4f8e"]
+[ext_resource type="Texture2D" uid="uid://b75glim1thuup" path="res://assets/main/maça.png" id="5_vm6gh"]
+[ext_resource type="Texture2D" uid="uid://grkr5olfig4" path="res://assets/main/maça_tracado.png" id="6_51wi6"]
+[ext_resource type="Texture2D" uid="uid://dfjx7b0r06q23" path="res://assets/main/auemntar.png" id="6_f5ykq"]
+[ext_resource type="Texture2D" uid="uid://c2rk86yip25qv" path="res://assets/main/maca_teste.png" id="6_lk18a"]
+[ext_resource type="Texture2D" uid="uid://b0wq0mue0ke2c" path="res://assets/main/buttom.png" id="7_ccaet"]
+[ext_resource type="Texture2D" uid="uid://bcya5jxxamhee" path="res://assets/main/quadrado2.png" id="9_wgmrt"]
+[ext_resource type="Texture2D" uid="uid://bv4oa23njcdtj" path="res://assets/main/estrela_teste.png" id="10_bjhgq"]
+[ext_resource type="Texture2D" uid="uid://4e8ust40ehpf" path="res://assets/main/quadrado_tracado.png" id="10_ydnkq"]
+[ext_resource type="Texture2D" uid="uid://0iqvrttlgf0s" path="res://assets/main/quadrado_teste.png" id="12_88g76"]
+[ext_resource type="AudioStream" uid="uid://djgc1ouaq2wu5" path="res://assets/sound/MA_RocaMusic_CandyMiners_Loop.ogg" id="14_s6i34"]
+[ext_resource type="AudioStream" uid="uid://bjdcg4jn3isxb" path="res://assets/sound/Video Game Jump Sound Effect 1.wav" id="14_ucm70"]
+[ext_resource type="Script" path="res://button.gd" id="14_uhhch"]
+[ext_resource type="AudioStream" uid="uid://b4sdwljfec142" path="res://assets/sound/Video Game Jump Sound Effect 2.wav" id="14_wsaqm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_55x2k"]
+size = Vector2(396, 918)
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_ictfu")
+metadata/_edit_horizontal_guides_ = [519.0]
+metadata/_edit_vertical_guides_ = [954.0]
+
+[node name="background" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+texture = ExtResource("2_y81xh")
+
+[node name="bola" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(954, 519)
+scale = Vector2(0.137829, 0.137829)
+texture = ExtResource("3_6ivl0")
+
+[node name="bola_teste" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(954, 519)
+scale = Vector2(0.426438, 0.426438)
+texture = ExtResource("4_vmw27")
+
+[node name="bola_tracado" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(954, 519)
+scale = Vector2(0.927936, 0.927935)
+texture = ExtResource("4_agvtg")
+
+[node name="maca_teste" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(954, 518)
+scale = Vector2(0.539095, 0.539095)
+texture = ExtResource("6_lk18a")
+
+[node name="maca" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(954, 519)
+scale = Vector2(0.249669, 0.250206)
+texture = ExtResource("5_vm6gh")
+
+[node name="maca_tracado" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(954, 519)
+scale = Vector2(1.14301, 1.14301)
+texture = ExtResource("6_51wi6")
+
+[node name="estrela" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(954, 519)
+scale = Vector2(0.507992, 0.507992)
+texture = ExtResource("3_bdlwe")
+
+[node name="estrela_teste" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(954, 519)
+scale = Vector2(0.476374, 0.476374)
+texture = ExtResource("10_bjhgq")
+
+[node name="estrela_tracado" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(954, 519)
+scale = Vector2(1.20247, 1.20247)
+texture = ExtResource("4_x0wqe")
+
+[node name="quadrado_teste" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(954, 519)
+scale = Vector2(0.402123, 0.402123)
+texture = ExtResource("12_88g76")
+
+[node name="quadrado" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(954, 519)
+scale = Vector2(0.851974, 0.851974)
+texture = ExtResource("9_wgmrt")
+
+[node name="quadrado_tracado" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(954, 519)
+texture = ExtResource("10_ydnkq")
+
+[node name="AreaEsquerda" type="Area2D" parent="."]
+
+[node name="CollisionEsquerda" type="CollisionShape2D" parent="AreaEsquerda"]
+position = Vector2(242, 540)
+shape = SubResource("RectangleShape2D_55x2k")
+
+[node name="SpriteEsquerda" type="Sprite2D" parent="AreaEsquerda"]
+position = Vector2(259, 540)
+texture = ExtResource("5_e4f8e")
+
+[node name="AreaDireita" type="Area2D" parent="."]
+
+[node name="CollisionDireita" type="CollisionShape2D" parent="AreaDireita"]
+position = Vector2(1671, 540)
+shape = SubResource("RectangleShape2D_55x2k")
+
+[node name="SpriteDireita" type="Sprite2D" parent="AreaDireita"]
+position = Vector2(1678, 540)
+texture = ExtResource("6_f5ykq")
+
+[node name="Button" type="Button" parent="."]
+offset_left = 805.0
+offset_top = 880.0
+offset_right = 1117.0
+offset_bottom = 1004.0
+focus_mode = 0
+icon = ExtResource("7_ccaet")
+flat = true
+script = ExtResource("14_uhhch")
+
+[node name="Label" type="Label" parent="."]
+modulate = Color(0, 0, 0, 1)
+offset_right = 388.0
+offset_bottom = 68.0
+theme_override_font_sizes/font_size = 96
+
+[node name="musica" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_s6i34")
+autoplay = true
+
+[node name="pegou" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_ucm70")
+pitch_scale = 1.98
+
+[node name="soltou" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_wsaqm")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[connection signal="input_event" from="AreaEsquerda" to="." method="_on_area_esquerda_input_event"]
+[connection signal="input_event" from="AreaDireita" to="." method="_on_area_direita_input_event"]
+[connection signal="button_down" from="Button" to="." method="_on_button_button_down"]

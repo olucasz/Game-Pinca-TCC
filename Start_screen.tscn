@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://cdxomv7wunddw"]
+
+[ext_resource type="Texture2D" uid="uid://c6a6nugrpnw6m" path="res://assets/TELAinicio.png" id="1_h87fp"]
+[ext_resource type="Texture2D" uid="uid://yy684hydvbv1" path="res://botaoJOGAR.png" id="2_qsuiw"]
+[ext_resource type="Script" path="res://start_game.gd" id="3_y2kn7"]
+[ext_resource type="AudioStream" uid="uid://bjdcg4jn3isxb" path="res://assets/sound/Video Game Jump Sound Effect 1.wav" id="4_pnkkf"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_h87fp")
+offset = Vector2(960, 540)
+
+[node name="start_game" type="Button" parent="."]
+layout_mode = 0
+offset_left = 787.0
+offset_top = 637.0
+offset_right = 1136.0
+offset_bottom = 988.0
+focus_mode = 0
+icon = ExtResource("2_qsuiw")
+flat = true
+script = ExtResource("3_y2kn7")
+
+[node name="action_but" type="AudioStreamPlayer" parent="start_game"]
+stream = ExtResource("4_pnkkf")
+
+[connection signal="pressed" from="start_game" to="start_game" method="_on_pressed"]
