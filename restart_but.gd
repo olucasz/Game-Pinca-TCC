@@ -13,5 +13,6 @@ func _process(delta: float) -> void:
 
 func _on_pressed() -> void:
 	click.play()
+	Global.reset = true
 	await get_tree().create_timer(0.2).timeout
 	get_tree().change_scene_to_file("res://main.tscn")
