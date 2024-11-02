@@ -34,7 +34,10 @@ var maca = Sprite2D
 var quadrado = Sprite2D
 var estrela = Sprite2D
 
+var pause_layer = Control
+
 func _ready():
+	pause_layer = $PAUSE
 	bola = $bola_teste
 	maca = $maca_teste
 	quadrado = $quadrado_teste
@@ -223,3 +226,33 @@ func _on_button_button_down() -> void:
 			Global.estrelas = 0
 			await get_tree().create_timer(0.2).timeout
 			get_tree().change_scene_to_file("res://game_over.tscn")
+
+
+func _on_pause_button_pressed() -> void:
+	pegou.play()
+	await get_tree().create_timer(0.2).timeout
+	pause_layer.visible = true
+	get_tree().paused = true
+
+
+func _on_play_pause_pressed() -> void:
+	pegou.play()
+	await get_tree().create_timer(0.2).timeout
+	pause_layer.visible = false
+	get_tree().paused = false
+
+
+func _on_home_pause_pressed() -> void:
+	pegou.play()
+	get_tree().paused = false
+	await get_tree().create_timer(0.2).timeout
+	get_tree().change_scene_to_file("res://Start_screen.tscn")
+
+
+func _on_restart_pause_pressed() -> void:
+	pegou.play()
+	Global.reset = true
+	pause_layer.visible = false
+	get_tree().paused = false
+	await get_tree().create_timer(0.2).timeout
+	get_tree().change_scene_to_file("res://main.tscn")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://c3uwsd67atu6c"]
+[gd_scene load_steps=30 format=3 uid="uid://c3uwsd67atu6c"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_ictfu"]
 [ext_resource type="Texture2D" uid="uid://ciqtrti4tsntq" path="res://assets/main/background.png" id="2_y81xh"]
@@ -17,6 +17,11 @@
 [ext_resource type="AudioStream" uid="uid://bjdcg4jn3isxb" path="res://assets/sound/Video Game Jump Sound Effect 1.wav" id="14_ucm70"]
 [ext_resource type="Script" path="res://button.gd" id="14_uhhch"]
 [ext_resource type="AudioStream" uid="uid://b4sdwljfec142" path="res://assets/sound/Video Game Jump Sound Effect 2.wav" id="14_wsaqm"]
+[ext_resource type="Texture2D" uid="uid://ckni56bj5wt0c" path="res://assets/PAUSE/PAUSE.png" id="18_88yv4"]
+[ext_resource type="Texture2D" uid="uid://b82cp3n22vryg" path="res://assets/PAUSE/PLAY.png" id="19_nm06y"]
+[ext_resource type="Texture2D" uid="uid://na5u1avuld8x" path="res://assets/PAUSE/SAIR.png" id="20_qeu0f"]
+[ext_resource type="Texture2D" uid="uid://ckcjpfbbcapok" path="res://assets/PAUSE/RESTART_PAUSE.png" id="21_wa55q"]
+[ext_resource type="Texture2D" uid="uid://girxvcsjb4ft" path="res://assets/PAUSE/pause3.png" id="22_h05r5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_55x2k"]
 size = Vector2(396, 918)
@@ -516,7 +521,64 @@ pitch_scale = 1.98
 stream = ExtResource("14_wsaqm")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+
+[node name="pause_button" type="Button" parent="."]
+process_mode = 3
+offset_left = 917.0
+offset_top = 22.0
+offset_right = 990.0
+offset_bottom = 95.0
+focus_mode = 0
+icon = ExtResource("22_h05r5")
+flat = true
+
+[node name="PAUSE" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="PAUSE" type="Sprite2D" parent="PAUSE"]
+position = Vector2(960, 540)
+texture = ExtResource("18_88yv4")
+
+[node name="PLAY_pause" type="Button" parent="PAUSE"]
+process_mode = 3
+offset_left = 1081.0
+offset_top = 521.0
+offset_right = 1275.0
+offset_bottom = 756.0
+focus_mode = 0
+icon = ExtResource("19_nm06y")
+flat = true
+
+[node name="HOME_pause" type="Button" parent="PAUSE"]
+process_mode = 3
+offset_left = 646.0
+offset_top = 504.0
+offset_right = 840.0
+offset_bottom = 739.0
+focus_mode = 0
+icon = ExtResource("20_qeu0f")
+flat = true
+
+[node name="RESTART_pause" type="Button" parent="PAUSE"]
+process_mode = 3
+layout_mode = 0
+offset_left = 864.0
+offset_top = 539.0
+offset_right = 1053.0
+offset_bottom = 729.0
+focus_mode = 0
+icon = ExtResource("21_wa55q")
+flat = true
 
 [connection signal="input_event" from="AreaEsquerda" to="." method="_on_area_esquerda_input_event"]
 [connection signal="input_event" from="AreaDireita" to="." method="_on_area_direita_input_event"]
 [connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
+[connection signal="pressed" from="pause_button" to="." method="_on_pause_button_pressed"]
+[connection signal="pressed" from="PAUSE/PLAY_pause" to="." method="_on_play_pause_pressed"]
+[connection signal="pressed" from="PAUSE/HOME_pause" to="." method="_on_home_pause_pressed"]
+[connection signal="pressed" from="PAUSE/RESTART_pause" to="." method="_on_restart_pause_pressed"]
