@@ -474,7 +474,7 @@ libraries = {
 "": SubResource("AnimationLibrary_c3aem")
 }
 autoplay = "down"
-speed_scale = 0.8
+speed_scale = 1.1
 
 [node name="AreaDireita" type="Area2D" parent="."]
 
@@ -491,7 +491,7 @@ libraries = {
 "": SubResource("AnimationLibrary_05kun")
 }
 autoplay = "direita"
-speed_scale = 0.8
+speed_scale = 1.1
 
 [node name="Button" type="Button" parent="."]
 offset_left = 805.0
@@ -524,7 +524,6 @@ stream = ExtResource("14_wsaqm")
 visible = false
 
 [node name="pause_button" type="Button" parent="."]
-process_mode = 3
 offset_left = 917.0
 offset_top = 22.0
 offset_right = 990.0

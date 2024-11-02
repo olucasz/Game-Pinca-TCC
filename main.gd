@@ -127,7 +127,7 @@ func _on_area_direita_input_event(viewport: Node, event: InputEvent, shape_idx: 
 			var distancia_atual = toque_1_pos.distance_to(toque_2_pos)
 			var fator_zoom = distancia_atual / distancia_inicial
 			
-			if fator_zoom > 1.03:
+			if fator_zoom > 1.04:
 				# Calcula a nova escala
 				var nova_escala = imagem_atual.scale * fator_zoom_in
 				# Verifica se a nova escala não excede o tamanho máximo
@@ -166,7 +166,7 @@ func _on_area_esquerda_input_event(viewport: Node, event: InputEvent, shape_idx:
 			var distancia_atual = toque_1_pos.distance_to(toque_2_pos)
 			var fator_zoom = distancia_atual / distancia_inicial
 			
-			if fator_zoom < 0.97:  # Zoom out
+			if fator_zoom < 0.96:  # Zoom out
 				# Calcula a nova escala
 				var nova_escala = imagem_atual.scale * fator_zoom_out
 				# Verifica se a nova escala não é menor que o tamanho mínimo
@@ -230,14 +230,12 @@ func _on_button_button_down() -> void:
 
 func _on_pause_button_pressed() -> void:
 	pegou.play()
-	await get_tree().create_timer(0.2).timeout
 	pause_layer.visible = true
 	get_tree().paused = true
 
 
 func _on_play_pause_pressed() -> void:
 	pegou.play()
-	await get_tree().create_timer(0.2).timeout
 	pause_layer.visible = false
 	get_tree().paused = false
 
@@ -245,14 +243,15 @@ func _on_play_pause_pressed() -> void:
 func _on_home_pause_pressed() -> void:
 	pegou.play()
 	get_tree().paused = false
+	Global.reset = false
 	await get_tree().create_timer(0.2).timeout
 	get_tree().change_scene_to_file("res://Start_screen.tscn")
 
 
 func _on_restart_pause_pressed() -> void:
 	pegou.play()
+	await get_tree().create_timer(0.2).timeout
 	Global.reset = true
 	pause_layer.visible = false
 	get_tree().paused = false
-	await get_tree().create_timer(0.2).timeout
 	get_tree().change_scene_to_file("res://main.tscn")
